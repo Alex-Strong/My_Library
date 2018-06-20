@@ -51,3 +51,5 @@ Route::get('/accesserror', function () {
 });
 
 Route::get('/send', 'UserController@sendMail');
+Route::get('/addimage', 'BookController@addimageView');
+Route::post('/addimage', 'BookController@addimage');

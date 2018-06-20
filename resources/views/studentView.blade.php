@@ -39,11 +39,10 @@
             {{$errorMessage}}
         </div>
     @endif
-
-
     <table class="table">
         <thead>
         <tr>
+            <th>Image</th>
             <th>Book name</th>
             <th>Book's author</th>
             <th>Publishing Year</th>
@@ -54,6 +53,8 @@
 @foreach($books as $book)
 
             <tr>
+
+                <td><img src = "uploads/{{ $book->book_id .".jpg"}}" alt="" border=3 height=100></td>
                 <td>{{ $book->name}}</td>
                 <td>{{ $book-> author}}</td>
                 <td>{{ $book-> publishing_year}}</td>

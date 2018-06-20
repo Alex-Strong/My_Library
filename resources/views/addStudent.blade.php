@@ -16,6 +16,9 @@
                 <li><a href="{{URL('/booked')}}">Booked Books</a></li>
                 <li class="active"><a href="{{URL('/addstudent')}}">Add Student</a></li>
                 <li><a href="{{URL('/addbook')}}">Add Book</a></li>
+                    @if(Auth::user()->hasRole('admin'))
+                        <li><a href="{{URL('/addimage')}}">Add Image For Book</a></li>
+                    @endif
             </ul>
 
         </ul>

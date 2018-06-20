@@ -14,6 +14,7 @@
             <li><a href="{{URL('/booked')}}">Booked Books</a></li>
             <li><a href="{{URL('/addstudent')}}">Add Student</a></li>
             <li><a href="{{URL('/addbook')}}">Add Book</a></li>
+            <li><a href="{{URL('/addimage')}}">Add Image For Book</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">

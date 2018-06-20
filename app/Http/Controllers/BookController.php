@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Book;
 
 use App\Booked;
+use \Input;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -46,6 +47,20 @@ class BookController extends Controller
             return view('adminView',['books' => Book::all(),'successMessage'=>"Book was deleted"]);
         }else{
             return view('adminView', ['books' => Book::all(),'errorMessage'=>"Book wan't deleted"]);
+        }
+    }
+    public function addimageView(){
+        return view('addimage', ['books' => Book::all()]);
+    }
+    public function addimage(Request $req){
+        $book_name = $req -> input("book_name");
+        echo $book_name;
+        if(Input::hasFile('fileToUpload')){
+
+            $file = Input::file('fileToUpload');
+            $file -> move('uploads', $book_name .".jpg");
+            return view('addimage', ['books' => Book::all()]);
+
         }
     }
 }

@@ -9,6 +9,7 @@
 
                 @if(Auth::user()->hasRole('admin'))
                     <li><a href="{{URL('/books')}}">Books</a></li>
+
                 @else
                     <li><a href="{{URL('/availablebooks')}}">Books</a></li>
                 @endif
@@ -17,6 +18,10 @@
                 <li><a href="{{URL('/booked')}}">Booked Books</a></li>
                 <li><a href="{{URL('/addstudent')}}">Add Student</a></li>
                 <li><a href="{{URL('/addbook')}}">Add Book</a></li>
+
+                    @if(Auth::user()->hasRole('admin'))
+                    <li><a href="{{URL('/addimage')}}">Add Image For Book</a></li>
+                    @endif
             </ul>
 
         </ul>
